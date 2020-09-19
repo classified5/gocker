@@ -3,6 +3,7 @@
 FROM golang:1.15.0-alpine AS builder
 WORKDIR /home/ai/go/src/github.com/classified5/gocker
 COPY . .
+RUN go mod download
 RUN go build -o binary main.go
 
 ## Distribute
